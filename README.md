@@ -1,7 +1,7 @@
 # Install
 
 ```shell
-git clone https://github.com/Flora-Network/fd-cli.git
+git clone https://github.com/beetseeds/fd-cli.git
 ```
 ```shell
 cd fd-cli
@@ -23,12 +23,12 @@ pip install -e . --extra-index-url https://pypi.chia.net/simple/
 ```shell
 
 # Set env var to blockchain path.
-export FD_CLI_BC_DB_PATH=$HOME/.flora/mainnet/db/blockchain_v1_mainnet.sqlite
+export FD_CLI_BC_DB_PATH=$HOME/.beet/mainnet/db/blockchain_v1_mainnet.sqlite
 
 # Set env var to wallet path.
 # This must be the wallet that is associated with mnemonic from which NFT plot was created. (Usually your hot wallet)
 # Replace <fingerprint> with your wallet fingerprint found at below path or by using "chia wallet show"
-export FD_CLI_WT_DB_PATH=$HOME/.flora/mainnet/wallet/db/blockchain_wallet_v1_mainnet_<fingerprint>.sqlite
+export FD_CLI_WT_DB_PATH=$HOME/.beet/mainnet/wallet/db/blockchain_wallet_v1_mainnet_<fingerprint>.sqlite
 
 # Set env var to launcher id of NFT plot. Replace the below ID with output of "Launcher ID:" 
 # Launcher ID: can be obtained using "chia plotnft show"
@@ -44,9 +44,9 @@ fd-cli nft-recover \
   -l "$LAUNCHER_HASH" \
   -p "$POOL_CONTRACT_ADDRESS" \
   -nh 127.0.0.1 \
-  -np 18755 \
-  -ct $HOME/.flora/mainnet/config/ssl/full_node/private_full_node.crt \
-  -ck $HOME/.flora/mainnet/config/ssl/full_node/private_full_node.key
+  -np 9981 \
+  -ct $HOME/.beet/mainnet/config/ssl/full_node/private_full_node.crt \
+  -ck $HOME/.beet/mainnet/config/ssl/full_node/private_full_node.key
   
 # All coins that were mined +7 days ago WITH NFT PLOT should be spendable soon via wallet.
 ```
@@ -84,21 +84,21 @@ Scrip also accepts various parameters. Please remember that you do not have to p
 
 #### Usage examples
 
-* One time recovery of coins in Flora blockchain:
+* One time recovery of coins in Beet blockchain:
 
-   `./flora_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id]`   
+   `./beet_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id]`   
 
-* One time recovery of coins in Flora blockchain when multiple wallet are available:
+* One time recovery of coins in Beet blockchain when multiple wallet are available:
 
-   `./flora_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -fingerprint [wallet_fingerprint]`   
+   `./beet_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -fingerprint [wallet_fingerprint]`   
 
-* One time recovery of coins in Flora and Silicoin blockchains:
+* One time recovery of coins in Beet and Silicoin blockchains:
 
-   `./flora_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -blockchains flora, silicoin`   
+   `./beet_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -blockchains flora, silicoin`   
 
-* Recovery of coins in Flora and Silicoin blockchains in a loop, executing the recovery every 24 hours:
+* Recovery of coins in Beet and Silicoin blockchains in a loop, executing the recovery every 24 hours:
 
-   `./flora_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -blockchains flora, silicoin -sleep 24`
+   `./beet_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -blockchains flora, silicoin -sleep 24`
 
 
 # Install Español
