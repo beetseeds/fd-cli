@@ -98,7 +98,7 @@ Scrip also accepts various parameters. Please remember that you do not have to p
 
 * Recovery of coins in Beet and Silicoin blockchains in a loop, executing the recovery every 24 hours:
 
-   `./beet_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -blockchains flora, silicoin -sleep 24`
+   `./beet_recovery.ps1 -POOL_CONTRACT_ADDRESS [your_pool_contract_address] -LAUNCHER_HASH [your_launcher_id] -blockchains beet, silicoin -sleep 24`
 
 
 # Install Español
